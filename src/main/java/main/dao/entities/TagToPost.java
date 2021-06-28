@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -15,11 +14,11 @@ public class TagToPost {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Tag tag;
 
-    @NotNull
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Post post;
 }

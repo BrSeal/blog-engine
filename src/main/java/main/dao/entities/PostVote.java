@@ -20,20 +20,20 @@ public class PostVote {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
     @OneToOne
+    @JoinColumn(nullable = false)
     User user;
 
-    @NotNull
     @ManyToOne
+    @JoinColumn(nullable = false)
     Post post;
 
-    @NotNull
+    @Column(nullable = false)
     LocalDateTime time;
 
     /**
      * лайк или дизлайк: 1 или -1
      */
-    @NotNull
+    @Column(nullable = false)
     byte value;
 }

@@ -4,7 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public class CaptchaCode {
@@ -12,14 +11,12 @@ public class CaptchaCode {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
+    @Column(nullable = false)
     private LocalDateTime time;
 
-    @NotNull
-    @Column(columnDefinition = "tinytext")
+    @Column(columnDefinition = "tinytext", nullable = false)
     private String code;
 
-    @NotNull
-    @Column(columnDefinition = "tinytext")
+    @Column(columnDefinition = "tinytext", nullable = false)
     private String secretCode;
 }

@@ -20,19 +20,19 @@ public class Comment {
     @ManyToOne
     private Comment comment;
 
-    @NotNull
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Post post;
 
-    @NotNull
     @ManyToOne
+    @JoinColumn(nullable = false)
     private User user;
 
-    @NotNull
+    @Column(nullable = false)
     private LocalDateTime time;
 
     @Lob
-    @NotNull
+    @Column(nullable = false)
     private String text;
 
 }

@@ -18,31 +18,31 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
+    @Column(nullable = false)
     boolean isActive;
 
-    @NotNull
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     ModerationStatus moderationStatus;
 
-    @NotNull
     @ManyToOne
+    @JoinColumn(nullable = false)
     User moderator;
 
-    @NotNull
     @ManyToOne
+    @JoinColumn(nullable = false)
     User user;
 
-    @NotNull
+    @Column(nullable = false)
     LocalDateTime time;
 
-    @NotNull
+    @Column(nullable = false)
     String title;
 
     @Lob
-    @NotNull
+    @Column(nullable = false)
     String text;
 
-    @NotNull
+    @Column(nullable = false)
     int view_count;
 }

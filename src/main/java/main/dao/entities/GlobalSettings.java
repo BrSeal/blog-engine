@@ -1,7 +1,6 @@
 package main.dao.entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
 public class GlobalSettings {
@@ -9,13 +8,12 @@ public class GlobalSettings {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String code;
 
-    @NotNull
+    @Column(nullable = false)
     private String name;
 
-    @NotNull
+    @Column(nullable = false)
     private String value;
 }
