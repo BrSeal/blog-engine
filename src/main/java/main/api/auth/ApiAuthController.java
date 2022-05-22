@@ -39,6 +39,7 @@ public class ApiAuthController {
      */
     @GetMapping("check")
     public AuthStatusResponse authStatus(Principal principal){
+
         return new AuthStatusResponse(authService.getAuthUser(principal));
     }
 }

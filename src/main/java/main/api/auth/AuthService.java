@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.security.Principal;
 
+import static java.util.Optional.ofNullable;
+
 @Service
 public class AuthService {
     private final UserRepository userRepository;
@@ -18,7 +20,9 @@ public class AuthService {
     }
 
     public AuthUserDTO getAuthUser(Principal principal) {
-        User user = userRepository.findByName(principal.getName());
+        User user = ofNullable(principal).map(p -> userRepository.findByName(principal.getName()))
+                .orElse(null);
+
         return authUserDtoFromUser(user);
     }
 

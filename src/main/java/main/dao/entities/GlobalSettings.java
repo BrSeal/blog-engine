@@ -1,5 +1,7 @@
 package main.dao.entities;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,4 +18,6 @@ public class GlobalSettings {
 
     @Column(nullable = false)
     private String value;
+
+
 }

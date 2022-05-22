@@ -8,7 +8,7 @@
           p:subtitle="Рассказы разработчиков"
           p:phone="+7 666 555-44-33"
           p:email="test@test.com"
-          p:copyright="Brs"
-          p:copyrightFrom="2021"/>
+          p:copyright="Awesome team"
+          p:copyrightFrom="2022"/>
 
 </beans>
