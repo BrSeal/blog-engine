@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiPostController {
 
 
-    @GetMapping()
+    @GetMapping
     public String getPosts () {
         return "{\n" +
                 "\"count\": 390,\n" +
