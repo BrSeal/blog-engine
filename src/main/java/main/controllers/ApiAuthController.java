@@ -1,4 +1,4 @@
-package main.api.auth;
+package main.controllers;
 
 import main.api.auth.AuthService;
 import main.api.auth.AuthStatusResponse;
