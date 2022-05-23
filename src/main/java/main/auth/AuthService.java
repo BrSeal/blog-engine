@@ -1,6 +1,6 @@
-package main.api.auth;
+package main.auth;
 
-import main.api.post.PostRepository;
+import main.repositories.PostRepository;
 import main.dao.entities.ModerationStatus;
 import main.dao.entities.User;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package main.api.auth;
+package main.auth;
 
 import lombok.Getter;
 import lombok.Setter;

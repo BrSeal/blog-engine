@@ -1,7 +1,7 @@
 package main.controllers;
 
-import main.api.global.BlogDataResponse;
-import main.api.global.GlobalService;
+import main.dao.dto.BlogDataResponse;
+import main.services.GlobalService;
 import main.dao.entities.GlobalSettings;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.GetMapping;

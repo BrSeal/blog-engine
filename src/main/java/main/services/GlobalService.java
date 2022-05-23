@@ -1,5 +1,7 @@
-package main.api.global;
+package main.services;
 
+import main.repositories.GlobalSettingsRepository;
+import main.dao.dto.BlogDataResponse;
 import main.dao.entities.GlobalSettings;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
