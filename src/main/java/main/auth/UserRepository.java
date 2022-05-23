@@ -1,4 +1,4 @@
-package main.api.auth;
+package main.auth;
 
 import main.dao.entities.User;
 import org.springframework.data.repository.CrudRepository;

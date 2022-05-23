@@ -1,4 +1,4 @@
-package main.api.auth;
+package main.auth;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;

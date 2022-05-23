@@ -1,4 +1,4 @@
-package main.api.global;
+package main.dao.dto;
 
 import lombok.Data;
 

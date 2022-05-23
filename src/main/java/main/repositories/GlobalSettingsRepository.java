@@ -1,4 +1,4 @@
-package main.api.global;
+package main.repositories;
 
 import main.dao.entities.GlobalSettings;
 import org.jetbrains.annotations.NotNull;

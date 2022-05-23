@@ -1,7 +1,7 @@
-package main.controllers;
+package main.auth;
 
-import main.api.auth.AuthService;
-import main.api.auth.AuthStatusResponse;
+import main.auth.AuthService;
+import main.auth.AuthStatusResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

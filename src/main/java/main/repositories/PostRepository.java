@@ -1,4 +1,4 @@
-package main.api.post;
+package main.repositories;
 
 import main.dao.entities.ModerationStatus;
 import main.dao.entities.Post;
