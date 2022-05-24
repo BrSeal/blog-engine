@@ -1,5 +1,9 @@
 # Readme к дипломной работе
 
+Master: [![Codeship Status for BrSeal/blog-engine](https://app.codeship.com/projects/641ee480-2804-402b-ab7e-303e4bc348ad/status?branch=master)](https://app.codeship.com/projects/458476)
+
+Dev:[![Codeship Status for BrSeal/blog-engine](https://app.codeship.com/projects/641ee480-2804-402b-ab7e-303e4bc348ad/status?branch=dev)](https://app.codeship.com/projects/458476)
+
 ---
 
 ## Запуск
