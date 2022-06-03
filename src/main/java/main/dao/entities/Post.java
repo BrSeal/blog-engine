@@ -4,9 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
-import java.util.Set;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,7 +15,7 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false)
     boolean isActive;
@@ -45,4 +44,14 @@ public class Post {
 
     @Column(nullable = false)
     int view_count;
+
+    @JoinTable(
+            name = "tag2post",
+            joinColumns =
+            @JoinColumn(name = "post_id", referencedColumnName = "id"),
+            inverseJoinColumns =
+            @JoinColumn(name = "tag_id", referencedColumnName = "id")
+    )
+    @ManyToMany
+    List<Tag> tags;
 }
