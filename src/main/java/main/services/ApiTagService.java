@@ -1,0 +1,49 @@
+package main.services;
+
+import main.dao.dto.TagsDTO;
+import main.dao.entities.Tag;
+import main.repositories.ApiTagRepository;
+import main.repositories.PostRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class ApiTagService {
+
+    private final ApiTagRepository apiTagRepository;
+    private final PostRepository postRepository;
+
+    public ApiTagService(ApiTagRepository apiTagRepository, PostRepository postRepository) {
+        this.apiTagRepository = apiTagRepository;
+        this.postRepository = postRepository;
+    }
+
+    public TagsDTO getAllTags(){
+      return getAllTags(null);
+    }
+
+    public TagsDTO getAllTags(String query){
+        List<Tag> tags;
+
+        if(query == null || query.isBlank()){
+            tags = apiTagRepository.findAll();
+        }
+        else{
+            tags = apiTagRepository.findByNameStartingWith(query);
+        }
+
+        //TODO реализовать получение всех weight одним запросом!
+        List<TagsDTO.TagDtoObject> tagDtoObjects = tags.stream()
+                .map(tag ->new TagsDTO.TagDtoObject(tag.getName(), calculateWeight(tag.getId())))
+                .collect(Collectors.toList());
+
+        return new TagsDTO(tagDtoObjects);
+    }
+
+    //TODO дописать получение весов
+    private Double calculateWeight(Long tagId){
+        return null;
+    }
+}

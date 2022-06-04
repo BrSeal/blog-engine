@@ -9,4 +9,5 @@ public class BlogDataResponse {
     private String phone;
     private String email;
     private String copyright;
-    private String copyrightFrom;}
+    private String copyrightFrom;
+}
