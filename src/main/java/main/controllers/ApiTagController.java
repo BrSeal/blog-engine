@@ -1,26 +1,21 @@
 package main.controllers;
 
+import lombok.AllArgsConstructor;
 import main.dao.dto.TagsDTO;
-import main.dao.entities.Tag;
 import main.services.ApiTagService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/tag")
+@RequestMapping("api")
+@AllArgsConstructor
 public class ApiTagController {
 
-    private final ApiTagService apiTagService;
+    ApiTagService apiTagService;
 
-    public ApiTagController(ApiTagService apiTagService) {
-        this.apiTagService = apiTagService;
-    }
-
-    @GetMapping
-    public TagsDTO getTags() {
-        return apiTagService.getAllTags();
+    @GetMapping("/tag")
+    @ResponseStatus(HttpStatus.OK)
+    public TagsDTO getTags(@RequestParam(value = "query", defaultValue = "") String query) {
+        return ApiTagService.getAllTags(query);
     }
 }
