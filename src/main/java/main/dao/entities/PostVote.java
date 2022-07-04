@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class PostVote {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @OneToOne
     @JoinColumn(nullable = false)
