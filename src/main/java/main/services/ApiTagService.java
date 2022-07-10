@@ -14,11 +14,11 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class ApiTagService {
 
-    private static ApiTagRepository apiTagRepository;
-    private static PostRepository postRepository;
+    private final ApiTagRepository apiTagRepository;
+    private final PostRepository postRepository;
 
 
-    public static TagsDTO getAllTags(String query) {
+    public TagsDTO getAllTags(String query) {
         List<Tag> tags;
 
         if(query == null || query.isBlank()) {

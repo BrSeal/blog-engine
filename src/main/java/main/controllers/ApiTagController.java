@@ -16,6 +16,6 @@ public class ApiTagController {
     @GetMapping("/tag")
     @ResponseStatus(HttpStatus.OK)
     public TagsDTO getTags(@RequestParam(value = "query", defaultValue = "") String query) {
-        return ApiTagService.getAllTags(query);
+        return apiTagService.getAllTags(query);
     }
 }
