@@ -16,7 +16,7 @@ public interface ApiTagRepository extends JpaRepository<Tag, Long> {
     List<Tag> findById(List<Long> ids);
 
     @Query(nativeQuery = true, value = "SELECT COUNT(*) FROM be.tag2post p WHERE tag_id = :tagId")
-    int findTagLinks(int tagId);
+    int countTagLinks(int tagId);
 
 
     @Query(nativeQuery = true, value = "SELECT name FROM be.tag2post "
